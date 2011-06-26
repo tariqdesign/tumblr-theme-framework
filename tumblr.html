@@ -55,12 +55,14 @@
 									<div class="section">
 										
 										{block:Date}
-											{block:NewDayDate}
-												{DayOfWeek} {Month} {DayOfMonth}, {Year}
-											{/block:NewDayDate}
-											{block:SameDayDate}
-												{TimeAgo}
-											{/block:SameDayDate}
+											<div class="date">
+												{block:NewDayDate}
+													{DayOfWeek} {Month} {DayOfMonth}, {Year}
+												{/block:NewDayDate}
+												{block:SameDayDate}
+													{TimeAgo}
+												{/block:SameDayDate}
+											</div><!--.date-->
 										{/block:Date}
 										
 										{block:Text}
@@ -79,7 +81,7 @@
 											{/block:Caption}
 											
 											{block:HighRes}
-												<p><a href="{PhotoURL-HighRes}">Download high-res photo</a></p>
+												<p><a href="{PhotoURL-HighRes}" class="download">Download high-res photo</a></p>
 											{/block:HighRes}
 										{/block:Photo}
 
@@ -128,7 +130,7 @@
 										{block:Audio}
 											
 											{block:AlbumArt}
-												<img src="{AlbumArtURL}" alt="" class="album-art"/>
+												<img src="{AlbumArtURL}" alt="" class="art"/>
 											{/block:AlbumArt}
 											
 											{block:Artist}
@@ -173,7 +175,7 @@
 										{/block:Answer}
 										
 										{block:More}
-											<p><a href="{Permalink}">Read more</a></p>
+											<p class="read-more"><a href="{Permalink}">Read more</a></p>
 										{/block:More}
 										
 										{block:HasTags}
@@ -189,8 +191,10 @@
 										{block:RebloggedFrom}
 										
 										{block:PostNotes}
-											<p class="note-coount">{NoteCountWithLabel}</p>
-											{PostNotes}
+											<div class="post-notes">
+												<p class="note-count">{NoteCountWithLabel}</p>
+												{PostNotes}
+											</div><!--.post-notes-->
 										{/block:PostNotes}
 										
 									</div><!--.section-->
@@ -237,17 +241,17 @@
 								{/block:NextPage}
 								{block:DayPagination}
 									{block:PreviousDayPage}
-										<li><a href="{PreviousDayPage}">{ShortMonth} {DayOfMonth}</a></li>
+										<li><a href="{PreviousDayPage}" class="previous day">{ShortMonth} {DayOfMonth}</a></li>
 									{/block:PreviousDayPage}
 									{block:NextDayPage}
-										<li><a href="{NextDayPage}">{ShortMonth} {DayOfMonth}</a></li>
+										<li><a href="{NextDayPage}" class="next day">{ShortMonth} {DayOfMonth}</a></li>
 									{/block:NextDayPage}
 								{/block:DayPagination}
 								<li><a href="/archive">Archive</a></li>
 							</ul><!--/pagination-->
 						{/block:Pagination}
 						
-						<form action="/search" method="get">
+						<form action="/search" method="get" id="search">
 							<input type="text" name="q" value="{SearchQuery}" />
 							<input type="submit" value="Search" />
 						</form>

@@ -22,3 +22,277 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: serif;
 }
+
+/** wrapper region
+ */
+#wrapper {
+	
+}
+	#wrapper > .section {
+		
+	}
+		#wrapper > .section div .section {
+			
+		}
+		
+/** Header region
+ */
+#header {
+	
+}
+	#header h1 {
+		
+	}
+
+/** Container region
+ */
+#container {
+	
+}
+
+/** Entries region
+*/
+#entries {
+	
+}
+	#entries .post {
+		
+	}
+		/** Text posts
+		 */
+		#entries .post.text {
+			
+		}
+			.post.text h3 {
+				
+			}
+		/** Photo posts
+		 */
+		#entries .post.photo {
+			
+		}
+			.post.photo img {
+				
+			}
+			.post.photo .caption {
+				
+			}
+			.post.photo a.download {
+				
+			}
+		/** Photoset posts
+		 */
+		#entries .post.photoset {
+			
+		}
+			.post.photoset .caption {
+				
+			}
+		/** Quote posts
+		 */
+		#entries .post.quote {
+			
+		}
+			.post.quote blockquote {
+				
+			}
+			.post.quote blockquote.short {
+				
+			}
+			.post.quote blockquote.medium {
+				
+			}
+			.post.quote blockquote.long {
+				
+			}
+			.source {
+				
+			}
+		/** Link posts
+		 */
+		#entries .post.link {
+			
+		}
+			.post.link a.link {
+				
+			}
+			.post.link .description {
+				
+			}
+		/** Chat posts
+		 */
+		#entries .post.chat {
+			
+		}
+			.post.chat h3 {
+				
+			}
+			ul.chat {
+				
+			}
+				ul.chat li.user_1 {
+					
+				}
+				ul.chat li.user_2 {
+					
+				}
+				ul.chat li.user_3 {
+					
+				}
+				ul.chat li.odd {
+					
+				}
+				ul.chat li.even {
+					
+				}
+ 		/** Audio posts
+		 */
+		#entries .post.audio {
+			
+		}
+			.post.audio img.art {
+				
+			}
+			.post.audio p.artist {
+				
+			}
+			.post.audio p.album {
+				
+			}
+			.post.audio p.trackname {
+				
+			}
+			.post.audio p.playcount {
+				
+			}
+			.post.audio p.external-audio {
+				
+			}
+				.post.audio p.external-audio a {
+				
+				}
+			.post.audio .caption {
+				
+			}			
+		/** Video posts
+		 */
+		#entries .post.video {
+			
+		}
+			.post.video .playcount {
+				
+			}
+			.post.video .caption {
+				
+			}
+		/** Answer Posts
+		 */
+		#entries .post.answer {
+			
+		}
+			.post.answer h3 {
+				
+			}
+				.post.answer h3 img {
+				
+				}
+		/** Other post classes
+		 */
+		#entries .post .date {
+			
+		}
+		#entries .post.even {
+			
+		}
+		#entries .post.odd {
+			
+		}
+		#entries .post .read-more {
+			
+		}
+			#entries .post .read-more a {
+				
+			}
+		/** Post tags
+		 */
+		#entries .post ul.tags {
+			
+		}
+			#entries .post ul.tags li {
+			
+			}
+				#entries .post ul.tags li a {
+					
+				}
+		/** Post notes
+		 */
+		#entries .post .post-notes {
+			
+		}
+			.post-notes .post-count {
+				
+			}
+			.post-notes ul {
+				
+			}
+				.post-notes ul li {
+					
+				}
+					.post-notes ul li a {
+						
+					}
+/** Navigation region
+ */
+#navigation {
+	
+}
+	#navigation ul {
+		
+	}
+		#navigation ul li {
+			
+		}
+			#navigation ul li a {
+				
+			}
+
+/** Footer region
+ */
+#footer {
+	
+}
+	/** Pagination
+	 */
+	ul#pagination {
+		
+	}
+		ul#pagination li {
+			
+		}
+			ul#pagination li a {
+				
+			}
+			ul#pagination li a.previous {
+				
+			}
+			ul#pagination li a.next {
+				
+			}
+			ul#pagination li a.previous.day {
+				
+			}
+			ul#pagination li a.next.day {
+				
+			}
+
+	/** Search form
+	 */
+	form#search {
+		
+	}
+		form#search input[type="text"] {
+			
+		}
+		form#search input[type="submit"] {
+			
+		}
