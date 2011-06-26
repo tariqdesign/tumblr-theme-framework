@@ -13,9 +13,6 @@
 		<link rel="stylesheet" href="style.css" media="all" />
 		<style type="text/css">{CustomCSS}</style>
 
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-		<script type="text/javascript" src="site.js"></script>
-
 	</head>
 	<body>
 
@@ -30,6 +27,13 @@
 							<p id="description">{Description}</p>
 						{/block:Description}
 						
+						{block:Twitter}
+							<div id="twitter">
+								<h3><a href="http://twitter.com/{TwitterUsername}">Latest Tweets</a></h3>
+								<div id="tweets"></div>
+							</div><!--/twitter-->
+						{/block:Twitter}
+						
 					</div><!--.section-->
 				</div><!--/header-->
 
@@ -38,9 +42,26 @@
 						
 						<div id="entries">
 							{block:Posts}
+							
+								{block:DayPage}
+									<h2>{Month} {DayOfMonth}, {Year}</h2>
+								{/block:DayPage}
+								
+								{block:TagPage}
+									<h2>Posts tagged "{Tag}"</h2>
+								{/block:TagPage}
 								
 								<div id="post-{PostID}" class="post {PostType} {TagsAsClasses} {block:Odd}odd{/block:Odd} {block:Even}even{/block:Even}">
 									<div class="section">
+										
+										{block:Date}
+											{block:NewDayDate}
+												{DayOfWeek} {Month} {DayOfMonth}, {Year}
+											{/block:NewDayDate}
+											{block:SameDayDate}
+												{TimeAgo}
+											{/block:SameDayDate}
+										{/block:Date}
 										
 										{block:Text}
 											{block:Title}	
@@ -51,11 +72,15 @@
 										{/block:Text}
 
 										{block:Photo}
-											<img src="{PhotoURL-500}" alt="{PhotoAlt}">
-
+											{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}">{LinkCloseTag}
+											
 											{block:Caption}
 												<div class="caption">{Caption}</div>
 											{/block:Caption}
+											
+											{block:HighRes}
+												<p><a href="{PhotoURL-HighRes}">Download high-res photo</a></p>
+											{/block:HighRes}
 										{/block:Photo}
 
 										{block:Photoset}
@@ -67,7 +92,7 @@
 										{/block:Photoset}
 
 										{block:Quote}
-											"{Quote}"
+											<blockquote class="{Length}">{Quote}</blockquote>
 
 											{block:Source}
 												<div class="source">{Source}</div>
@@ -101,8 +126,31 @@
 										{/block:Chat}
 
 										{block:Audio}
+											
+											{block:AlbumArt}
+												<img src="{AlbumArtURL}" alt="" class="album-art"/>
+											{/block:AlbumArt}
+											
+											{block:Artist}
+												<p class="artist">{Artist}</p>
+											{/block:Artist}
+											
+											{block:Album}
+												<p class="album">{Album}</p>
+											{/block:Album}
+											
+											{block:TrackName}
+												<p class="trackname">{TrackName}</p>
+											{/block:TrackName}
+											
 											{AudioPlayerBlack}
+											
+											<p class="playcount">{PlayCountWithLabel}</p>
 
+											{block:ExternalAudio}
+												<p class="external-audio"><a href="{ExternalAudioURL}">Download</a></p>
+											{/block:ExternalAudio}
+											
 											{block:Caption}
 												<div class="caption">{Caption}</div>
 											{/block:Caption}
@@ -110,19 +158,40 @@
 
 										{block:Video}
 											{Video-500}
-
+											
+											<p class="playcount">{PlayCountWithLabel}</p>
+											
 											{block:Caption}
 												<div class="caption">{Caption}</div>
 											{/block:Caption}
 										{/block:Video}
 
 										{block:Answer}
-											{block:Title}	
-												<h3><a href="{Permalink}">{Title}</a></h3>
-											{/block:Title}
-
-											{Body}
+											<h3><img src="{AskerPortraitURL-24}" alt="" />{Question}</h3>
+											
+											{Answer}
 										{/block:Answer}
+										
+										{block:More}
+											<p><a href="{Permalink}">Read more</a></p>
+										{/block:More}
+										
+										{block:HasTags}
+											<ul class="tags">
+												{block:Tags}
+													<li><a href="{TagURL}">{Tag}</a></li>
+												{/block:Tags}
+											</ul>
+										{/block:HasTags}
+										
+										{block:RebloggedFrom}
+											<p class="reblogged"><img src="{ReblogRootPortraitURL-24}" alt="{ReblogRootName}">Reblogged from <a href="ReblogRootURL">{ReblogRootName}</a></p>
+										{block:RebloggedFrom}
+										
+										{block:PostNotes}
+											<p class="note-coount">{NoteCountWithLabel}</p>
+											{PostNotes}
+										{/block:PostNotes}
 										
 									</div><!--.section-->
 								</div><!--/post-{PostID}.{PostType}-->								
@@ -166,15 +235,44 @@
 								{block:NextPage}
 									<li><a href="{NextPage}" class="next">Next</a></li>
 								{/block:NextPage}
+								{block:DayPagination}
+									{block:PreviousDayPage}
+										<li><a href="{PreviousDayPage}">{ShortMonth} {DayOfMonth}</a></li>
+									{/block:PreviousDayPage}
+									{block:NextDayPage}
+										<li><a href="{NextDayPage}">{ShortMonth} {DayOfMonth}</a></li>
+									{/block:NextDayPage}
+								{/block:DayPagination}
 								<li><a href="/archive">Archive</a></li>
 							</ul><!--/pagination-->
 						{/block:Pagination}
 						
+						<form action="/search" method="get">
+							<input type="text" name="q" value="{SearchQuery}" />
+							<input type="submit" value="Search" />
+						</form>
 					</div><!--.section-->
 				</div><!--/footer-->
 
 			</div><!--.section-->
 		</div><!--/wrapper-->
 
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+		{block:Twitter}
+			<script type="text/javascript" src="/tweets.js"></script>
+			<script type="text/javascript">
+				function recent_tweets(data) {
+					for (i=0, i < data.length; i++) {
+						document.getElementById("tweets").innerHTML = 
+						'<a href="http://twitter.com/{TwitterUsername}/status/' + 
+						'(data[i].id_str ? data[i].id_str : data[id].id)' + 
+						'"><div class="content">' + data[i].text + '</div></a>';
+					}
+					document.getElementById("twitter").style.display = 'block';
+				}
+			</script>
+		{/block:Twitter}
+		<script type="text/javascript" src="site.js"></script>
+		
 	</body>
 </html>
