@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>{Title}</title>
+
+		<link rel="shortcut icon" href="{Favicon}" />
+		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+		{block:Description}
+			<meta name="description" content="{MetaDescription}" />
+		{/block:Description}
+		
+		<link rel="stylesheet" href="#" media="all" />
+
+		<script type="text/javascript" src="#"></script>
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div class="section">
+
+				<div id="header">
+					<div class="section">
+						
+						<h1>{Title}</h1>
+						{block:Description}
+							<p id="description">{Description}</p>
+						{/block:Description}
+						
+					</div><!--.section-->
+				</div><!--/header-->
+
+				<div id="container">
+					<div class="section">
+						
+						<div id="entries">
+							{block:Posts}
+
+								{block:Text}
+									<div id="post-#" class="post text">
+											
+										{block:Title}	
+											<h3><a href="{Permalink}">{Title}</a></h3>
+										{/block:Title}
+										
+										{Body}
+										
+									</div><!--/post-#.text-->
+								{/block:Text}
+
+								{block:Photo}
+									<div id="post-#" class="post photo">
+								
+									</div><!--/post-#.photo-->
+								{/block:Photo}
+						
+								{block:Photoset}
+									<div id="post-#" class="post photoset">
+								
+									</div><!--/post-#.photoset-->
+								{/block:Photoset}
+						
+								{block:Quote}
+									<div id="post-#" class="post quote">
+								
+									</div><!--/post-#.quote-->
+								{/block:Quote}
+
+								{block:Link}
+									<div id="post-#" class="post link">
+								
+									</div><!--/post-#.link-->
+								{/block:Link}
+							
+								{block:Chat}
+									<div id="post-#" class="post chat">
+								
+									</div><!--/post-#.chat-->
+								{/block:Chat}
+							
+								{block:Audio}
+									<div id="post-#" class="post audio">
+								
+									</div><!--/post-#.audio-->
+								{/block:Audio}
+								
+								{block:Video}
+									<div id="post-#" class="post video">
+								
+									</div><!--/post-#.video-->
+								{/block:Video}
+							
+							{block:Posts}
+						</div><!--/entries-->
+						
+					</div><!--.section-->
+				</div><!--/container-->
+
+				<div id="footer">
+					<div class="section">
+						
+						<ul id="pagination">
+							{block:PreviousPage}
+								<li><a href="{PreviousPage}" class="previous">Previous</a></li>
+							{/block:PreviousPage}
+							{block:NextPage}
+								<li><a href="{NextPage}" class="next">Next</a></li>
+							{/block:NextPage}
+								<li><a href="/archive">Archive</a></li>
+						</ul><!--/pagination-->
+						
+					</div><!--.section-->
+				</div><!--/footer-->
+
+			</div><!--.section-->
+		</div><!--/wrapper-->
+
+	</body>
+</html>
