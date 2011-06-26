@@ -11,6 +11,7 @@
 		{/block:Description}
 		
 		<link rel="stylesheet" href="#" media="all" />
+		<style type="text/css">{CustomCSS}</style>
 
 		<script type="text/javascript" src="#"></script>
 
@@ -39,55 +40,107 @@
 
 								{block:Text}
 									<div id="post-#" class="post text">
-											
-										{block:Title}	
-											<h3><a href="{Permalink}">{Title}</a></h3>
-										{/block:Title}
+										<div class="section">
+											{block:Title}	
+												<h3><a href="{Permalink}">{Title}</a></h3>
+											{/block:Title}
 										
-										{Body}
-										
+											{Body}
+										</div><!--.section-->
 									</div><!--/post-#.text-->
 								{/block:Text}
 
 								{block:Photo}
 									<div id="post-#" class="post photo">
-								
+										<div class="section">
+											<img src="{PhotoURL-500}" alt="{PhotoAlt}">
+										
+											{block:Caption}
+												<div class="caption">{Caption}</div>
+											{/block:Caption}
+										</div><!--.section-->
 									</div><!--/post-#.photo-->
 								{/block:Photo}
 						
 								{block:Photoset}
 									<div id="post-#" class="post photoset">
-								
+										<div class="section">
+											{Photoset-500}
+										
+											{block:Caption}
+												<div class="caption">{Caption}</div>
+											{/block:Caption}
+										</div><!--.section-->
 									</div><!--/post-#.photoset-->
 								{/block:Photoset}
 						
 								{block:Quote}
 									<div id="post-#" class="post quote">
-								
+										<div class="section">
+											"{Quote}"
+										
+											{block:Source}
+												<div class="source">{Source}</div>
+											{/block:Source}
+										</div><!--.section-->
 									</div><!--/post-#.quote-->
 								{/block:Quote}
 
 								{block:Link}
 									<div id="post-#" class="post link">
-								
+										<div class="section">
+											<a href="{URL}" class="link" {Target}>{Name}</a>
+										
+											{block:Description}
+												<div class="description">{Description}</div>
+											{/block:Description}
+										</div><!--.section-->
 									</div><!--/post-#.link-->
 								{/block:Link}
 							
 								{block:Chat}
 									<div id="post-#" class="post chat">
-								
+										<div class="section">
+											{block:Title}
+												<h3><a href="{Permalink}">{Title}</a></h3>
+											{/block:Title}
+										
+											<ul class="chat">
+												{block:Lines}
+													<li class="{Alt} user_{UserNumber}">
+														{block:Label}
+															<span class="label">{Label}</span>
+														{/block:Label}
+													
+														{Line}
+													</li>
+												{/block:Lines}
+											</ul>
+										</div><!--.section-->
 									</div><!--/post-#.chat-->
 								{/block:Chat}
 							
 								{block:Audio}
 									<div id="post-#" class="post audio">
-								
+										<div class="section">
+											{AudioPlayerBlack}
+										
+											{block:Caption}
+												<div class="caption">{Caption}</div>
+											{/block:Caption}
+										</div><!--.section-->
 									</div><!--/post-#.audio-->
 								{/block:Audio}
 								
 								{block:Video}
 									<div id="post-#" class="post video">
-								
+										<div class="section">
+											{Video-500}
+										
+											{block:Caption}
+												<div class="caption">{Caption}</div>
+											{/block:Caption}
+										</div><!--.section-->
 									</div><!--/post-#.video-->
 								{/block:Video}
 							
