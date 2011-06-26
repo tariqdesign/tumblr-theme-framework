@@ -1,0 +1,24 @@
+/** HTML Reset.  Not the best practice to use a star but it will do.
+ */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/** Basic HTML styles
+ */
+html {
+	
+}
+body {
+	font-family: sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+/** Basic Typography
+ */
+h1, h2, h3, h4, h5, h6 {
+	font-family: serif;
+}
