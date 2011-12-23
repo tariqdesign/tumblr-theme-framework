@@ -1,17 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-
-		<title>{Title}</title>
-
+		
+		<meta charset="utf-8" />
+		{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+		{block:PostSummary}<meta name="title" content="{PostSummary} - {Title}" />{/block:PostSummary}
+	  	{block:Permalink}{block:Posts}<meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}" />{/block:Posts}{/block:Permalink}
+		
+		<meta name="text:Google Analytics ID" content=""/>
+		<meta name="color:Asterisk" content="#9b1205"/>
+		
+		<title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
 		<link rel="shortcut icon" href="{Favicon}" />
 		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
-		{block:Description}
-			<meta name="description" content="{MetaDescription}" />
-		{/block:Description}
-		
 		<link rel="stylesheet" href="style.css" media="all" />
-		<style type="text/css">{CustomCSS}</style>
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="site.js"></script>
+		
+		<style type="text/css">
+			{CustomCSS}
+		</style>
+		
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		{block:IfGoogleAnalyticsID}
+	    <script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		{/block:IfGoogleAnalyticsID}
 
 	</head>
 	<body>
@@ -261,7 +288,6 @@
 			</div><!--.section-->
 		</div><!--/wrapper-->
 
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 		{block:Twitter}
 			<script type="text/javascript" src="/tweets.js"></script>
 			<script type="text/javascript">
@@ -276,7 +302,6 @@
 				}
 			</script>
 		{/block:Twitter}
-		<script type="text/javascript" src="site.js"></script>
 		
 	</body>
 </html>
