@@ -23,44 +23,18 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: serif;
 }
 
-/** wrapper region
- */
-#wrapper {
-	
-}
-	#wrapper > .section {
-		
-	}
-		#wrapper > .section div .section {
-			
-		}
-		
-/** Header region
- */
-#header {
-	
-}
-	#header h1 {
-		
-	}
-
 /** Container region
  */
 #container {
 	
 }
 
-/** Entries region
-*/
-#entries {
-	
-}
-	#entries .post {
+	#container .post {
 		
 	}
 		/** Text posts
 		 */
-		#entries .post.text {
+		#container .post.text {
 			
 		}
 			.post.text h3 {
@@ -68,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 			}
 		/** Photo posts
 		 */
-		#entries .post.photo {
+		#container .post.photo {
 			
 		}
 			.post.photo img {
@@ -82,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 			}
 		/** Photoset posts
 		 */
-		#entries .post.photoset {
+		#container .post.photoset {
 			
 		}
 			.post.photoset .caption {
@@ -90,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 			}
 		/** Quote posts
 		 */
-		#entries .post.quote {
+		#container .post.quote {
 			
 		}
 			.post.quote blockquote {
@@ -110,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 			}
 		/** Link posts
 		 */
-		#entries .post.link {
+		#container .post.link {
 			
 		}
 			.post.link a.link {
@@ -121,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 			}
 		/** Chat posts
 		 */
-		#entries .post.chat {
+		#container .post.chat {
 			
 		}
 			.post.chat h3 {
@@ -147,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 				}
  		/** Audio posts
 		 */
-		#entries .post.audio {
+		#container .post.audio {
 			
 		}
 			.post.audio img.art {
@@ -176,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 			}			
 		/** Video posts
 		 */
-		#entries .post.video {
+		#container .post.video {
 			
 		}
 			.post.video .playcount {
@@ -187,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
 			}
 		/** Answer Posts
 		 */
-		#entries .post.answer {
+		#container .post.answer {
 			
 		}
 			.post.answer h3 {
@@ -198,35 +172,35 @@ h1, h2, h3, h4, h5, h6 {
 				}
 		/** Other post classes
 		 */
-		#entries .post .date {
+		#container .post .date {
 			
 		}
-		#entries .post.even {
+		#container .post.even {
 			
 		}
-		#entries .post.odd {
+		#container .post.odd {
 			
 		}
-		#entries .post .read-more {
+		#container .post .read-more {
 			
 		}
-			#entries .post .read-more a {
+			#container .post .read-more a {
 				
 			}
 		/** Post tags
 		 */
-		#entries .post ul.tags {
+		#container .post ul.tags {
 			
 		}
-			#entries .post ul.tags li {
+			#container .post ul.tags li {
 			
 			}
-				#entries .post ul.tags li a {
+				#container .post ul.tags li a {
 					
 				}
 		/** Post notes
 		 */
-		#entries .post .post-notes {
+		#container .post .post-notes {
 			
 		}
 			.post-notes .post-count {
@@ -246,53 +220,12 @@ h1, h2, h3, h4, h5, h6 {
 #navigation {
 	
 }
-	#navigation ul {
+	#navigation ol {
 		
 	}
-		#navigation ul li {
+		#navigation ol li {
 			
 		}
-			#navigation ul li a {
+			#navigation ol li a {
 				
 			}
-
-/** Footer region
- */
-#footer {
-	
-}
-	/** Pagination
-	 */
-	ul#pagination {
-		
-	}
-		ul#pagination li {
-			
-		}
-			ul#pagination li a {
-				
-			}
-			ul#pagination li a.previous {
-				
-			}
-			ul#pagination li a.next {
-				
-			}
-			ul#pagination li a.previous.day {
-				
-			}
-			ul#pagination li a.next.day {
-				
-			}
-
-	/** Search form
-	 */
-	form#search {
-		
-	}
-		form#search input[type="text"] {
-			
-		}
-		form#search input[type="submit"] {
-			
-		}
